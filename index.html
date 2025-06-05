@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="scroll-progress" id="scrollProgress"></div>
     <a href="#main-content" class="skip-link">Пропустить к содержанию</a>
     <div class="container">
         <header class="header">
@@ -34,7 +35,7 @@
 
         <main class="main-content" id="main-content" tabindex="-1">
             <!-- Overview Tab -->
-            <section id="overview" class="tab-content active">
+            <section id="overview" class="tab-content active animate-on-scroll">
                 <div class="welcome-section">
                     <h2>Добро пожаловать!</h2>
                     <p>Это руководство поможет вам объяснить клиентам различия между IaaS, PaaS и SaaS в контексте Azure Cloud простыми словами.</p>
@@ -93,7 +94,7 @@
             </section>
 
             <!-- IaaS Tab -->
-            <section id="iaas" class="tab-content">
+            <section id="iaas" class="tab-content animate-on-scroll">
                 <div class="service-header">
                     <h2>IaaS - Infrastructure as a Service</h2>
                     <p class="service-subtitle">Аренда виртуальных машин и инфраструктуры</p>
@@ -176,7 +177,7 @@
             </section>
 
             <!-- PaaS Tab -->
-            <section id="paas" class="tab-content">
+            <section id="paas" class="tab-content animate-on-scroll">
                 <div class="service-header">
                     <h2>PaaS - Platform as a Service</h2>
                     <p class="service-subtitle">Готовая платформа для разработки приложений</p>
@@ -255,7 +256,7 @@
             </section>
 
             <!-- SaaS Tab -->
-            <section id="saas" class="tab-content">
+            <section id="saas" class="tab-content animate-on-scroll">
                 <div class="service-header">
                     <h2>SaaS - Software as a Service</h2>
                     <p class="service-subtitle">Готовые приложения через интернет</p>
@@ -336,7 +337,7 @@
             </section>
 
             <!-- Analogies Tab -->
-            <section id="analogies" class="tab-content">
+            <section id="analogies" class="tab-content animate-on-scroll">
                 <div class="analogies-header">
                     <h2>Аналогии для простого объяснения</h2>
                     <p>Используйте эти аналогии для объяснения концепций клиентам</p>
@@ -403,7 +404,7 @@
             </section>
 
             <!-- Pricing Tab -->
-            <section id="pricing" class="tab-content">
+            <section id="pricing" class="tab-content animate-on-scroll">
                 <div class="pricing-header">
                     <h2>Финансовые преимущества</h2>
                     <p>Как облако помогает экономить деньги</p>
@@ -507,6 +508,9 @@
                 </div>
             </div>
         </footer>
+        <button class="back-to-top" id="backToTop" aria-label="Наверх" title="Наверх">
+            ↑<span class="visually-hidden">Вернуться к началу страницы</span>
+        </button>
     </div>
 
     <div id="notification-region" class="sr-only" aria-live="polite"></div>

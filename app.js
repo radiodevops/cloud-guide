@@ -62,6 +62,9 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeThemeSwitcher();
   initializeEnhancedFeatures();
   initializeAccessibility();
+  initializeScrollProgress();
+  initializeBackToTop();
+  initializeScrollAnimations();
 });
 
 // Tab Navigation
@@ -478,4 +481,56 @@ if (skipLink) {
       document.getElementById('main-content').focus();
     }
   });
+}
+
+function initializeScrollProgress() {
+  const progress = document.getElementById('scrollProgress');
+  if (!progress) return;
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = docHeight > 0 ? scrollTop / docHeight : 0;
+    progress.style.transform = `scaleX(${percent})`;
+  });
+}
+
+function initializeBackToTop() {
+  const btn = document.getElementById('backToTop');
+  if (!btn) return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+function initializeScrollAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+  });
+}
+
+// Utility: set button loading state
+function setButtonLoading(btn, isLoading) {
+  if (!btn) return;
+  if (isLoading) {
+    btn.classList.add('btn--loading');
+    btn.setAttribute('disabled', 'disabled');
+  } else {
+    btn.classList.remove('btn--loading');
+    btn.removeAttribute('disabled');
+  }
 }
