@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Cloud Services - IaaS, PaaS, SaaS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Пропустить к содержанию</a>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="azure-logo">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 19h20L12 2z" fill="#0078d7"/>
+                        <path d="M12 5L6 17h12L12 5z" fill="#40e0d0"/>
+                    </svg>
+                </div>
+                <h1>Azure Cloud Services</h1>
+                <p class="subtitle">Руководство по IaaS, PaaS и SaaS для продавцов</p>
+                <button id="theme-toggle" class="btn btn--outline" aria-label="Переключить тему" title="Переключить светлую/тёмную тему">🌓</button>
+            </div>
+        </header>
+
+        <nav class="tab-navigation" role="tablist" aria-label="Навигация по разделам" id="main-tabs">
+            <button class="tab-btn active" data-tab="overview">Обзор</button>
+            <button class="tab-btn" data-tab="iaas">IaaS</button>
+            <button class="tab-btn" data-tab="paas">PaaS</button>
+            <button class="tab-btn" data-tab="saas">SaaS</button>
+            <button class="tab-btn" data-tab="analogies">Аналогии</button>
+            <button class="tab-btn" data-tab="pricing">Цены</button>
+        </nav>
+
+        <main class="main-content" id="main-content" tabindex="-1">
+            <!-- Overview Tab -->
+            <section id="overview" class="tab-content active">
+                <div class="welcome-section">
+                    <h2>Добро пожаловать!</h2>
+                    <p>Это руководство поможет вам объяснить клиентам различия между IaaS, PaaS и SaaS в контексте Azure Cloud простыми словами.</p>
+                </div>
+
+                <div class="comparison-table card">
+                    <h3>Быстрое сравнение</h3>
+                    <table class="services-table">
+                        <thead>
+                            <tr>
+                                <th>Модель</th>
+                                <th>Что это</th>
+                                <th>Пример Azure</th>
+                                <th>Кому подходит</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>IaaS</strong></td>
+                                <td>Аренда виртуальных машин и инфраструктуры</td>
+                                <td>Azure Virtual Machines</td>
+                                <td>ИТ-отделы, разработчики</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PaaS</strong></td>
+                                <td>Готовая платформа для разработки</td>
+                                <td>Azure App Service</td>
+                                <td>Команды разработки</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SaaS</strong></td>
+                                <td>Готовые приложения через интернет</td>
+                                <td>Microsoft 365</td>
+                                <td>Конечные пользователи</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="responsibility-matrix card">
+                    <h3>Матрица ответственности: Кто что управляет</h3>
+                    <div class="responsibility-chart">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1748775214/pplx_project_search_images/bcff374044ba728c4f09567f65a986e2775cb614.jpg" alt="Модель разделения ответственности Azure Cloud">
+                    </div>
+                </div>
+
+                <div class="quick-navigation">
+                    <h3>Перейти к разделу</h3>
+                    <div class="nav-buttons">
+                        <button class="btn btn--primary" onclick="switchTab('iaas')">Узнать про IaaS</button>
+                        <button class="btn btn--primary" onclick="switchTab('paas')">Узнать про PaaS</button>
+                        <button class="btn btn--primary" onclick="switchTab('saas')">Узнать про SaaS</button>
+                        <button class="btn btn--secondary" onclick="switchTab('analogies')">Посмотреть аналогии</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IaaS Tab -->
+            <section id="iaas" class="tab-content">
+                <div class="service-header">
+                    <h2>IaaS - Infrastructure as a Service</h2>
+                    <p class="service-subtitle">Аренда виртуальных машин и инфраструктуры</p>
+                </div>
+
+                <div class="service-description card">
+                    <h3>Что такое IaaS?</h3>
+                    <p>Представьте, что вы арендуете пустую квартиру. Стены, коммуникации есть, но мебель, технику вы ставите сами. Так же и с IaaS - Microsoft предоставляет "железо", а вы устанавливаете операционную систему и приложения.</p>
+                </div>
+
+                <div class="azure-examples card">
+                    <h3>Примеры Azure IaaS</h3>
+                    <div class="examples-grid">
+                        <div class="example-item">
+                            <h4>Azure Virtual Machines</h4>
+                            <p>Виртуальные серверы в облаке</p>
+                        </div>
+                        <div class="example-item">
+                            <h4>Azure Storage</h4>
+                            <p>Облачные хранилища данных</p>
+                        </div>
+                        <div class="example-item">
+                            <h4>Azure Virtual Network</h4>
+                            <p>Сетевая инфраструктура</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo card">
+                    <h3>Интерактивная демонстрация</h3>
+                    <div class="demo-container">
+                        <div class="responsibility-column">
+                            <h4>Вы управляете:</h4>
+                            <ul class="responsibility-list customer">
+                                <li>Операционная система</li>
+                                <li>Приложения</li>
+                                <li>Данные</li>
+                                <li>Runtime</li>
+                            </ul>
+                        </div>
+                        <div class="responsibility-column">
+                            <h4>Azure управляет:</h4>
+                            <ul class="responsibility-list azure">
+                                <li>Серверы</li>
+                                <li>Сеть</li>
+                                <li>Хранилища</li>
+                                <li>Виртуализация</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefits card">
+                    <h3>Преимущества IaaS</h3>
+                    <ul class="benefits-list">
+                        <li>💰 Экономия на покупке серверов</li>
+                        <li>📈 Быстрое масштабирование</li>
+                        <li>🔧 Нет обслуживания оборудования</li>
+                        <li>🌍 Глобальная доступность</li>
+                    </ul>
+                </div>
+
+                <div class="target-customers card">
+                    <h3>Кому подходит IaaS?</h3>
+                    <div class="customers-grid">
+                        <div class="customer-item">
+                            <h4>Компании с существующими приложениями</h4>
+                            <p>Миграция в облако без изменения архитектуры</p>
+                        </div>
+                        <div class="customer-item">
+                            <h4>ИТ-отделы</h4>
+                            <p>Полный контроль над инфраструктурой</p>
+                        </div>
+                        <div class="customer-item">
+                            <h4>Разработчики инфраструктуры</h4>
+                            <p>Гибкая настройка окружения</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PaaS Tab -->
+            <section id="paas" class="tab-content">
+                <div class="service-header">
+                    <h2>PaaS - Platform as a Service</h2>
+                    <p class="service-subtitle">Готовая платформа для разработки приложений</p>
+                </div>
+
+                <div class="service-description card">
+                    <h3>Что такое PaaS?</h3>
+                    <p>Это как арендовать меблированную квартиру с кухней. Вам остается только готовить - все инструменты уже есть. PaaS предоставляет готовую платформу для разработки, вы фокусируетесь только на коде.</p>
+                </div>
+
+                <div class="azure-examples card">
+                    <h3>Примеры Azure PaaS</h3>
+                    <div class="examples-grid">
+                        <div class="example-item">
+                            <h4>Azure App Service</h4>
+                            <p>Хостинг веб-приложений</p>
+                        </div>
+                        <div class="example-item">
+                            <h4>Azure SQL Database</h4>
+                            <p>Управляемая база данных</p>
+                        </div>
+                        <div class="example-item">
+                            <h4>Azure Functions</h4>
+                            <p>Бессерверные вычисления</p>
+                        </div>
+                        <div class="example-item">
+                            <h4>Azure Cosmos DB</h4>
+                            <p>Глобальная NoSQL база</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo card">
+                    <h3>Сравнение с IaaS</h3>
+                    <div class="comparison-demo">
+                        <div class="demo-column">
+                            <h4>IaaS</h4>
+                            <p>Вы управляете ОС, runtime, приложениями</p>
+                            <div class="time-indicator">⏱️ Время на настройку: недели</div>
+                        </div>
+                        <div class="demo-column highlight">
+                            <h4>PaaS</h4>
+                            <p>Вы управляете только приложениями</p>
+                            <div class="time-indicator">⚡ Время на настройку: часы</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefits card">
+                    <h3>Преимущества PaaS</h3>
+                    <ul class="benefits-list">
+                        <li>⚡ Фокус на коде, а не на инфраструктуре</li>
+                        <li>🔄 Автоматическое масштабирование</li>
+                        <li>🛠️ Встроенные инструменты разработки</li>
+                        <li>🚀 Быстрый выход на рынок</li>
+                    </ul>
+                </div>
+
+                <div class="target-customers card">
+                    <h3>Кому подходит PaaS?</h3>
+                    <div class="customers-grid">
+                        <div class="customer-item">
+                            <h4>Разработчики</h4>
+                            <p>Меньше времени на настройку, больше на код</p>
+                        </div>
+                        <div class="customer-item">
+                            <h4>Команды разработки</h4>
+                            <p>Быстрое развертывание и тестирование</p>
+                        </div>
+                        <div class="customer-item">
+                            <h4>Стартапы</h4>
+                            <p>Быстрый запуск без больших инвестиций</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SaaS Tab -->
+            <section id="saas" class="tab-content">
+                <div class="service-header">
+                    <h2>SaaS - Software as a Service</h2>
+                    <p class="service-subtitle">Готовые приложения через интернет</p>
+                </div>
+
+                <div class="service-description card">
+                    <h3>Что такое SaaS?</h3>
+                    <p>Это как пойти в ресторан - вы приходите, заказываете блюдо и едите. Никого приготовления, никакой посуды. SaaS - это готовые приложения, которыми можно пользоваться сразу через браузер.</p>
+                </div>
+
+                <div class="azure-examples card">
+                    <h3>Примеры Azure SaaS</h3>
+                    <div class="examples-grid">
+                        <div class="example-item">
+                            <h4>Microsoft 365</h4>
+                            <p>Office приложения в облаке</p>
+                        </div>
+                        <div class="example-item">
+                            <h4>Microsoft Teams</h4>
+                            <p>Корпоративные коммуникации</p>
+                        </div>
+                        <div class="example-item">
+                            <h4>Dynamics 365</h4>
+                            <p>CRM и ERP системы</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-demo card">
+                    <h3>Готовые приложения</h3>
+                    <div class="demo-container">
+                        <div class="saas-demo">
+                            <h4>Вы только:</h4>
+                            <ul class="responsibility-list customer">
+                                <li>Используете приложение</li>
+                                <li>Настраиваете под себя</li>
+                            </ul>
+                        </div>
+                        <div class="saas-demo">
+                            <h4>Microsoft делает всё остальное:</h4>
+                            <ul class="responsibility-list azure">
+                                <li>Разработка</li>
+                                <li>Обновления</li>
+                                <li>Безопасность</li>
+                                <li>Поддержка</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="benefits card">
+                    <h3>Преимущества SaaS</h3>
+                    <ul class="benefits-list">
+                        <li>📱 Никаких установок - работает в браузере</li>
+                        <li>🌐 Доступ откуда угодно</li>
+                        <li>💵 Предсказуемая оплата по подписке</li>
+                        <li>🔄 Автоматические обновления</li>
+                    </ul>
+                </div>
+
+                <div class="target-customers card">
+                    <h3>Кому подходит SaaS?</h3>
+                    <div class="customers-grid">
+                        <div class="customer-item">
+                            <h4>Конечные пользователи</h4>
+                            <p>Простота использования без технических знаний</p>
+                        </div>
+                        <div class="customer-item">
+                            <h4>Бизнес-отделы</h4>
+                            <p>Быстрое внедрение без ИТ-поддержки</p>
+                        </div>
+                        <div class="customer-item">
+                            <h4>HR, продажи, маркетинг</h4>
+                            <p>Специализированные готовые решения</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analogies Tab -->
+            <section id="analogies" class="tab-content">
+                <div class="analogies-header">
+                    <h2>Аналогии для простого объяснения</h2>
+                    <p>Используйте эти аналогии для объяснения концепций клиентам</p>
+                </div>
+
+                <div class="analogy-section card">
+                    <h3>🍕 Аналогия с пиццей</h3>
+                    <div class="pizza-analogy">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1749011639/pplx_project_search_images/9542f3c0eb35f2c4c126b465073e416fb79e061e.jpg" alt="Аналогия пиццы для объяснения облачных сервисов">
+                    </div>
+                    <div class="analogy-cards">
+                        <div class="analogy-card">
+                            <h4>Дома (On-Premises)</h4>
+                            <p>Готовить пиццу дома с нуля - покупаете все ингредиенты</p>
+                        </div>
+                        <div class="analogy-card">
+                            <h4>IaaS</h4>
+                            <p>Возьми и запеки - готовое тесто, соус, начинка, но запекаете сами</p>
+                        </div>
+                        <div class="analogy-card">
+                            <h4>PaaS</h4>
+                            <p>Доставка пиццы - пицца готова, осталось съесть</p>
+                        </div>
+                        <div class="analogy-card">
+                            <h4>SaaS</h4>
+                            <p>Ресторан - приходите и заказываете готовое блюдо</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analogy-section card">
+                    <h3>🏠 Аналогия с жильем</h3>
+                    <div class="apartment-analogy">
+                        <div class="analogy-cards">
+                            <div class="analogy-card">
+                                <h4>Покупка квартиры (On-Premises)</h4>
+                                <p>Все ваше, но все проблемы тоже ваши</p>
+                            </div>
+                            <div class="analogy-card">
+                                <h4>IaaS</h4>
+                                <p>Аренда пустой квартиры - есть стены, мебель покупаете сами</p>
+                            </div>
+                            <div class="analogy-card">
+                                <h4>PaaS</h4>
+                                <p>Аренда меблированной квартиры - есть кухня, остается готовить</p>
+                            </div>
+                            <div class="analogy-card">
+                                <h4>SaaS</h4>
+                                <p>Отель с обслуживанием - все готово, просто пользуйтесь</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-try card">
+                    <h3>Попробуйте сами</h3>
+                    <p>Выберите аналогию и объясните клиенту:</p>
+                    <div class="try-buttons">
+                        <button class="btn btn--secondary" onclick="showAnalogy('pizza')">Объяснить через пиццу</button>
+                        <button class="btn btn--secondary" onclick="showAnalogy('apartment')">Объяснить через жилье</button>
+                    </div>
+                    <div id="analogy-result" class="analogy-result hidden"></div>
+                </div>
+            </section>
+
+            <!-- Pricing Tab -->
+            <section id="pricing" class="tab-content">
+                <div class="pricing-header">
+                    <h2>Финансовые преимущества</h2>
+                    <p>Как облако помогает экономить деньги</p>
+                </div>
+
+                <div class="opex-capex card">
+                    <h3>OpEx vs CapEx</h3>
+                    <div class="comparison-demo">
+                        <div class="demo-column">
+                            <h4>Традиционный подход (CapEx)</h4>
+                            <ul>
+                                <li>💰 Большие первоначальные инвестиции</li>
+                                <li>📊 Сложно прогнозировать потребности</li>
+                                <li>⚠️ Риск недоиспользования ресурсов</li>
+                                <li>🔧 Затраты на обслуживание</li>
+                            </ul>
+                        </div>
+                        <div class="demo-column highlight">
+                            <h4>Облачный подход (OpEx)</h4>
+                            <ul>
+                                <li>💳 Оплата по факту использования</li>
+                                <li>📈 Масштабирование по потребности</li>
+                                <li>✅ Предсказуемые операционные расходы</li>
+                                <li>🆓 Без затрат на обслуживание</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden-savings card">
+                    <h3>Скрытая экономия</h3>
+                    <div class="savings-grid">
+                        <div class="saving-item">
+                            <h4>🔄 Автоматические обновления</h4>
+                            <p>Экономия на ИТ-персонале и времени</p>
+                        </div>
+                        <div class="saving-item">
+                            <h4>💾 Резервное копирование</h4>
+                            <p>Включено в стоимость сервиса</p>
+                        </div>
+                        <div class="saving-item">
+                            <h4>🔒 Безопасность</h4>
+                            <p>Уровень Enterprise без дополнительных затрат</p>
+                        </div>
+                        <div class="saving-item">
+                            <h4>🌍 Глобальная доступность</h4>
+                            <p>Нет затрат на создание филиалов</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pricing-calculator card">
+                    <h3>Калькулятор экономии</h3>
+                    <div class="calculator">
+                        <div class="calculator-input">
+                            <label>Количество серверов:</label>
+                            <input type="number" id="servers" value="10">
+                        </div>
+                        <div class="calculator-input">
+                            <label>Стоимость сервера (руб.):</label>
+                            <input type="number" id="serverCost" value="500000">
+                        </div>
+                        <button class="btn btn--primary" onclick="calculateSavings()">Рассчитать экономию</button>
+                        <div id="calculatorResult" class="calculator-result hidden"></div>
+                    </div>
+                </div>
+
+                <div class="roi-section card">
+                    <h3>Возврат инвестиций (ROI)</h3>
+                    <div class="roi-points">
+                        <div class="roi-item">
+                            <h4>Быстрое масштабирование</h4>
+                            <p>Возможность быстро адаптироваться к росту бизнеса</p>
+                        </div>
+                        <div class="roi-item">
+                            <h4>Фокус на бизнесе</h4>
+                            <p>ИТ-команда может сосредоточиться на развитии, а не на обслуживании</p>
+                        </div>
+                        <div class="roi-item">
+                            <h4>Снижение рисков</h4>
+                            <p>Microsoft берет на себя риски безопасности и доступности</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="next-steps">
+                    <h3>Следующие шаги</h3>
+                    <div class="cta-buttons">
+                        <button class="btn btn--primary">Связаться с экспертом Azure</button>
+                        <button class="btn btn--secondary">Получить демо-доступ</button>
+                        <button class="btn btn--outline">Скачать презентацию</button>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <p>© 2025 Microsoft Corporation. Все права защищены.</p>
+                    <p>Для получения дополнительной информации свяжитесь с вашим менеджером Azure.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="notification-region" class="sr-only" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
