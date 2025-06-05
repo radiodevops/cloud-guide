@@ -210,10 +210,10 @@ function calculateSavings() {
   resultDiv.innerHTML = `
     <h4>Результаты расчета экономии</h4>
     <div style="text-align: left;">
-      <p><strong>Стоимость оборудования:</strong> ${totalHardwareCost.toLocaleString()} руб.</p>
-      <p><strong>Обслуживание в год:</strong> ${maintenanceCostPerYear.toLocaleString()} руб.</p>
-      <p><strong>Стоимость Azure в год:</strong> ${cloudCostPerYear.toLocaleString()} руб.</p>
-      <p style="color: #0078d7; font-weight: bold;"><strong>Экономия за 3 года:</strong> ${totalSavings3Years.toLocaleString()} руб.</p>
+      <p><strong>Стоимость оборудования:</strong> $${totalHardwareCost.toLocaleString()}</p>
+      <p><strong>Обслуживание в год:</strong> $${maintenanceCostPerYear.toLocaleString()}</p>
+      <p><strong>Стоимость Azure в год:</strong> $${cloudCostPerYear.toLocaleString()}</p>
+      <p style="color: #0078d7; font-weight: bold;"><strong>Экономия за 3 года:</strong> $${totalSavings3Years.toLocaleString()}</p>
     </div>
     <p style="font-size: 0.9em; color: #666; margin-top: 15px;">
       <em>* Расчет приблизительный. Точную стоимость поможет рассчитать калькулятор Azure.</em>
